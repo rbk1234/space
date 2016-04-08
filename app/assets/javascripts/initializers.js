@@ -13,10 +13,6 @@ function registerInitializer(key, callback) {
     GlobalInitializers[key] = callback;
 }
 
-function initOnDocumentLoad() {
-    initOnLoad('body.' + $('body').attr('class'), $(document));
-}
-
 function initOnLoad(key, $panel, data) {
     if (key in GlobalInitializers) {
         console.log('Firing initializer for ' + key);
@@ -26,3 +22,16 @@ function initOnLoad(key, $panel, data) {
         console.log('No initializer for ' + key);
     }
 }
+
+(function($) {
+    function doDocumentInit() {
+        var $document = $(document);
+        initOnLoad('body.' + $('body').attr('class'), $document);
+        $document.foundation();
+    }
+
+    $(function() {
+        doDocumentInit();
+    });
+}(jQuery));
+

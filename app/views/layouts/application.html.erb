@@ -6,10 +6,11 @@
 
   <title><%= content_for?(:title) ? yield(:title) : "Space" %></title>
 
+  <%= stylesheet_link_tag "foundation_and_overrides", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+
 </head>
 
 <body class="<%= params[:controller].split('/')[0] %>">

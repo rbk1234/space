@@ -14,12 +14,11 @@
 
         _init: function() {
             console.log('init');
-
         }
 
     };
 
-    registerInitializer('body.main', function($panel) {
+    registerInitializer('body.application', function($panel) {
         $panel.data('main', new Main($panel));
         // put other stuff here if needed
     });

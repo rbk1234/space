@@ -17,15 +17,7 @@
 
 //= require initializers
 
-//= require main.js
+//= require main
 
-//= require foundation
 //= require turbolinks
-
-
-
-$(function() {
-    //initOnDocumentLoad();
-    $(document).foundation();
-    console.log('foundation done');
-});
+//= require foundation
