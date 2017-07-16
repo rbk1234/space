@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "Space" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "The Fisherman" %></title>
 
-  <%= stylesheet_link_tag "foundation_and_overrides", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "foundation_and_overrides", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-</head>
+  </head>
 
-<body class="<%= params[:controller].split('/')[0] %>">
+  <body class="<%= params[:controller].split('/')[0] %>">
+    <header>
+      <%# render 'layouts/navigation' %>
+    </header>
 
-<%= yield %>
-</body>
+    <main role="main">
+      <%# render 'layouts/messages' %>
+      <%= yield %>
+    </main>
+
+    <footer id="footer">
+      <div>
+        <p class="text-center">
+          <small>Copyright &copy; <%= Time.now.year %></small>
+        </p>
+      </div>
+    </footer>
+
+  </body>
 </html>

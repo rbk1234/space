@@ -15,9 +15,16 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 
+
+//= require lib/namespace
 //= require initializers
 
+//= require lib/keyboard
+//= require lib/mixins
+//= require lib/utilities
 //= require main
+//= require player
+//= require screen
 
 //= require turbolinks
 //= require foundation
